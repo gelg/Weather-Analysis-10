@@ -1,0 +1,23 @@
+{
+  "name": "weatheranalysis2",
+  "version": "1.0.0",
+  "description": "Weather Application or Website that lets you get weather for a day a week or the 4 day hourly average while also showing the hourly weather for 4 days. ",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "server": "nodemon server"
+  },
+  "author": "Gihad",
+  "license": "MIT",
+  "dependencies": {
+    "config": "^3.3.1",
+    "express": "^4.17.1",
+    "express-validator": "^6.6.1",
+    "mongoose": "^5.10.6",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.4"
+  }
+}
