@@ -1,0 +1,29 @@
+.title
+{
+  font-family: 'Pacifico', cursive;
+}
+
+.secondaryText
+{
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.navyText
+{
+  color: #00004f;
+}
+
+.navyBackground
+{
+  background-color: #00004f;
+}
+
+.mL30
+{
+  margin-left: 30%;
+}
+
+.mR30
+{
+  margin-right: 30%;
+}
