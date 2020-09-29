@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import alert from './alert';
+import weather from './weather';
 
 export default combineReducers({
-  alert
+  weather
 });

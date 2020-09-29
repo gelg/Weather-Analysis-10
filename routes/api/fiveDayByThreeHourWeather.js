@@ -31,15 +31,18 @@ router.post('/',[
   const typeOfRequest = "Five Day By Three Hour Weather";
   try
   {
+      //console.log(city + " " + country + " " + state + " " + typeOfRequest);
       const url = 'https://mitxwj0bwk.execute-api.us-east-1.amazonaws.com/test/weatheranalysis?city=' + city + '&state=' + state + '&country=' + country + '&typeOfRequest=' + typeOfRequest;
       const response = await fetch(url);
       const data = await response.json();
       // const pData = JSON.parse(JSON.stringify(data));
       // const {weather , main, wind, clouds } = data;
+
       const weatherRequestFields = {country: country, state: state, city: city, typeOfRequest: typeOfRequest};
       // Create a new campground and save to DB
       const weatherRequest = new Request(weatherRequestFields);
       await weatherRequest.save();
+      console.log(data);
       res.json(data);
   }
   catch (err)

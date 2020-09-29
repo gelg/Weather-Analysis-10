@@ -5,7 +5,7 @@ import './App.css';
 import Navbar from './components/layouts/Navbar';
 import Landing from './components/layouts/Landing';
 import OneDayWeatherForm from './components/weatherForms/OneDayWeatherForm';
-import FourDayHourlyWeatherAverageForm from './components/weatherForms/FourDayHourlyWeatherAverageForm';
+import Requests from './components/weatherForms/Requests';
 import FiveDayByThreeHourWeatherForm from './components/weatherForms/FiveDayByThreeHourWeatherForm';
 
 // Redux
@@ -21,7 +21,7 @@ const App = () =>
           <Navbar />
           <Route exact path='/' component={Landing} />
           <Route exact path='/OneDayWeather' component={OneDayWeatherForm} />
-          <Route exact path='/FourDayHourlyWeatherAverage' component={FourDayHourlyWeatherAverageForm} />
+          <Route exact path='/Requests' component={Requests} />
           <Route exact path='/FiveDayByThreeHourWeather' component={FiveDayByThreeHourWeatherForm} />
         </React.Fragment>
       </Router>

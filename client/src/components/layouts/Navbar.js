@@ -14,10 +14,10 @@ const Navbar = () =>
             <Link to="/OneDayWeather" className="nav-link secondaryText"> One Day Weather </Link>
           </li>
           <li className="nav-item active ml-5">
-            <Link to="/FourDayHourlyWeatherAverage" className="nav-link secondaryText"> Four Day Hourly Weather Average </Link>
+            <Link to="/FiveDayByThreeHourWeather" className="nav-link secondaryText"> Five Day By Three Hour Weather </Link>
           </li>
           <li className="nav-item active ml-5">
-            <Link to="/FiveDayByThreeHourWeather" className="nav-link secondaryText"> Five Day By Three Hour Weather </Link>
+            <Link to="/Requests" className="nav-link secondaryText"> Requests </Link>
           </li>
         </ul>
       </div>

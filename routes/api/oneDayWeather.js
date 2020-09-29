@@ -41,7 +41,7 @@ router.post('/',[
       // Create a new campground and save to DB
       const weatherRequest = new Request(weatherRequestFields);
       await weatherRequest.save();
-      res.redirect('/oneDayWeather');
+      res.json(data);
   }
   catch (err)
   {
