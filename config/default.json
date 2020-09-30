@@ -1,3 +1,3 @@
 {
-  "mongoURI" :"mongodb+srv://WAdbfplmernp:al%27v.4AO%5E35.ffE63fvaspTEw%25%40j@weatheranalysiscluster0.hqsma.mongodb.net/<dbname>?retryWrites=true&w=majority"
+  "mongoURI" :"mongoURI"
 }

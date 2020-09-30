@@ -77,7 +77,7 @@ router.post('/',[
       }
       var time = hours + ":" + minutes + ":" + seconds;
 
-      const url = 'https://mitxwj0bwk.execute-api.us-east-1.amazonaws.com/test/weatheranalysis?city=' + city + '&state=' + state + '&country=' + country + '&typeOfRequest=' + typeOfRequest + '&date=' + date + '&time=' + time;
+      const url = 'apigateway?city=' + city + '&state=' + state + '&country=' + country + '&typeOfRequest=' + typeOfRequest + '&date=' + date + '&time=' + time;
       const response = await fetch(url);
       const data = await response.json();
 

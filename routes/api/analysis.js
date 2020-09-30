@@ -28,7 +28,7 @@ router.post('/',[
   const { file } = req.body;
   try
   {
-      const url = 'https://mitxwj0bwk.execute-api.us-east-1.amazonaws.com/test/analysis?file=' + file;
+      const url = 'apigateway?file=' + file;
       const response = await fetch(url);
       const data = await response.json();
       //console.log(data);
