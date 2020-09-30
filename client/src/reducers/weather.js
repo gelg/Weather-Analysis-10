@@ -1,11 +1,15 @@
 import{
   GET_ONEDAYWEATHERSUCCESS,
-  GET_FIVEDAYBYTHREEHOURWEATHERSUCCESS
+  GET_FIVEDAYBYTHREEHOURWEATHERSUCCESS,
+  GET_REQUESTSSUCCESS,
+  GET_ANALYSISSUCCESS
 } from '../actions/types';
 
 const initialState ={
   oneDayWeather: {},
-  fiveDayByThreeHourWeather: {}
+  fiveDayByThreeHourWeather: {},
+  requests: [],
+  analysis: {}
 }
 
 export default function(state = initialState, action){
@@ -23,6 +27,16 @@ export default function(state = initialState, action){
       return{
         ...state,
         fiveDayByThreeHourWeather: payload
+      }
+    case GET_REQUESTSSUCCESS:
+      return{
+        ...state,
+        requests: payload
+      }
+    case GET_ANALYSISSUCCESS:
+      return{
+        ...state,
+        analysis: payload
       }
     default:
       return state;

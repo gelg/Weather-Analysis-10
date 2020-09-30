@@ -33,38 +33,39 @@ const OneDayWeatherForm = ({getOneDayWeather}) =>
 
   }
   useEffect(() => {
-    console.log(store.getState());
     if(store.getState().weather.oneDayWeather.base != undefined)
     {
-      console.log(store.getState().weather.oneDayWeather.base);
       const odWeather = store.getState().weather.oneDayWeather;
       document.getElementById("oneDayWeatherResults").innerHTML =
       "<div class=\"row d-flex justify-content-center mT10 mB10\">" +
-        "<div class=\"card\">"+
+        "<div class=\"card\">" +
           "<div class=\"card-header\" id =\"demo\">"+
             "City: " + city + "   " + "State: " + state + "   " + "Country: " + country +
-        "</div>" +
-        "<ul class=\"list-group list-group-flush\">" +
-          "<li class=\"list-group-item\">Description: " + odWeather.weather[0].main + ", " + odWeather.weather[0].description + "</li>" +
-          "<li class=\"list-group-item\">Temp: " + odWeather.main.temp + "</li>" +
-          "<li class=\"list-group-item\">Max Temp: " + odWeather.main.temp_max + "</li>" +
-          "<li class=\"list-group-item\">Min Temp: " + odWeather.main.temp_min + "</li>" +
-          "<li class=\"list-group-item\">Humidity: " + odWeather.main.humidity + "</li>" +
-          "<li class=\"list-group-item\">Wind Speed: " + odWeather.wind.speed + "</li>" +
-        "</ul>" +
+          "</div>" +
+          "<ul class=\"list-group list-group-flush\">" +
+            "<li class=\"list-group-item\">Description: " + odWeather.weather[0].main + ", " + odWeather.weather[0].description + "</li>" +
+            "<li class=\"list-group-item\">Temp: " + odWeather.main.temp + " degrees F" + "</li>" +
+            "<li class=\"list-group-item\">Max Temp: " + odWeather.main.temp_max + " degrees F" + "</li>" +
+            "<li class=\"list-group-item\">Min Temp: " + odWeather.main.temp_min + " degrees F" + "</li>" +
+            "<li class=\"list-group-item\">Humidity: " + odWeather.main.humidity + "</li>" +
+            "<li class=\"list-group-item\">Wind Speed: " + odWeather.wind.speed + " miles/hour" + "</li>" +
+          "</ul>" +
+        "</div>"+
       "</div>"
     }
+    //
     else if(store.getState().weather.oneDayWeather.cod === "404")
     {
       document.getElementById("oneDayWeatherResults").innerHTML =
       "<div class=\"row d-flex justify-content-center mT10 mB10\">" +
-        "<div class=\"card\">"+
+        "<div class=\"card\">" +
           "<div class=\"card-header\" id =\"demo\">"+
             "City: " + city + "   " + "State: " + state + "   " + "Country: " + country +
+          "</div>" +
+          "<ul class=\"list-group list-group-flush\">" +
+            "<li class=\"list-group-item\">Description: " + "There are no results for this location" +"</li>" +
+          "</ul>" +
         "</div>" +
-        "<ul class=\"list-group list-group-flush\">" +
-          "<li class=\"list-group-item\">Description: " + "There are no results for this location" +"</li>" +
-        "</ul>" +
       "</div>"
     }
   });

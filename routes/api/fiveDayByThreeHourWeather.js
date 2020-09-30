@@ -31,18 +31,66 @@ router.post('/',[
   const typeOfRequest = "Five Day By Three Hour Weather";
   try
   {
-      //console.log(city + " " + country + " " + state + " " + typeOfRequest);
-      const url = 'https://mitxwj0bwk.execute-api.us-east-1.amazonaws.com/test/weatheranalysis?city=' + city + '&state=' + state + '&country=' + country + '&typeOfRequest=' + typeOfRequest;
+      var today = new Date();
+      var year = today.getFullYear();
+      if(today.getMonth() < 9)
+      {
+        var month = "0" + (today.getMonth() +1);
+      }
+      else
+      {
+        var month = (today.getMonth() + 1);
+      }
+      if(today.getDate() < 10)
+      {
+        var day = "0" + (today.getDate());
+      }
+      else
+      {
+        var day = today.getDate();
+      }
+      var date = year + "-" + month + "-" + day;
+      if(today.getHours() < 10)
+      {
+        var hours = "0" + today.getHours();
+      }
+      else
+      {
+        var hours = today.getHours();
+      }
+      if(today.getMinutes() < 10)
+      {
+        var minutes = "0" + today.getMinutes();
+      }
+      else
+      {
+        var minutes = today.getMinutes();
+      }
+      if(today.getSeconds() < 10)
+      {
+        var seconds = "0" + today.getSeconds();
+      }
+      else
+      {
+        var seconds = today.getSeconds();
+      }
+      var time = hours + ":" + minutes + ":" + seconds;
+
+      const url = 'https://mitxwj0bwk.execute-api.us-east-1.amazonaws.com/test/weatheranalysis?city=' + city + '&state=' + state + '&country=' + country + '&typeOfRequest=' + typeOfRequest + '&date=' + date + '&time=' + time;
       const response = await fetch(url);
       const data = await response.json();
-      // const pData = JSON.parse(JSON.stringify(data));
-      // const {weather , main, wind, clouds } = data;
 
-      const weatherRequestFields = {country: country, state: state, city: city, typeOfRequest: typeOfRequest};
+      var requestSuccess = "True";
+      var file = "WeatherAnalysis " + "Date: "+  date + "/" + city + ", " + country + " Time: " + time  + ".json";
+      if(data.cod === "404")
+      {
+         requestSuccess = "False";
+         file ="No File"
+      }
+      const weatherRequestFields = {country: country, state: state, city: city, typeOfRequest: typeOfRequest, date: date, time: time, file: file, requestSuccess: requestSuccess};
       // Create a new campground and save to DB
       const weatherRequest = new Request(weatherRequestFields);
       await weatherRequest.save();
-      console.log(data);
       res.json(data);
   }
   catch (err)

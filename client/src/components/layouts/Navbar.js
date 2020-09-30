@@ -19,6 +19,9 @@ const Navbar = () =>
           <li className="nav-item active ml-5">
             <Link to="/Requests" className="nav-link secondaryText"> Requests </Link>
           </li>
+          <li className="nav-item active ml-5">
+            <Link to="/Analysis" className="nav-link secondaryText"> Analysis </Link>
+          </li>
         </ul>
       </div>
     </nav>

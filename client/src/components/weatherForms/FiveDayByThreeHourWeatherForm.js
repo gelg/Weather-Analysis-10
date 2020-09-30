@@ -36,10 +36,8 @@ const FiveDayByThreeHourWeatherForm = ({getFiveDayByThreeHourWeather}) =>
 
   }
   useEffect(() => {
-    console.log(store.getState());
     if(store.getState().weather.fiveDayByThreeHourWeather.cod == "200")
     {
-      console.log(store.getState().weather.oneDayWeather.base);
       document.getElementById("fiveDayByThreeHourWeatherResults").innerHTML = ""
       const fdWeather = store.getState().weather.fiveDayByThreeHourWeather;
       for(var i = 0; i < 40; i++)
@@ -49,16 +47,17 @@ const FiveDayByThreeHourWeatherForm = ({getFiveDayByThreeHourWeather}) =>
           "<div class=\"card\">"+
             "<div class=\"card-header\" id =\"demo\">"+
               "City: " + city + "   " + "State: " + state + "   " + "Country: " + country +
+            "</div>" +
+            "<ul class=\"list-group list-group-flush\">" +
+              "<li class=\"list-group-item\">Date and Time: " + fdWeather.list[i].dt_txt +"</li>" +
+              "<li class=\"list-group-item\">Description: " + fdWeather.list[i].weather[0].main + ", " + fdWeather.list[i].weather[0].description + "</li>" +
+              "<li class=\"list-group-item\">Temp: " + fdWeather.list[i].main.temp + " degrees F" + "</li>" +
+              "<li class=\"list-group-item\">Max Temp: " + fdWeather.list[i].main.temp_max + " degrees F" + "</li>" +
+              "<li class=\"list-group-item\">Min Temp: " + fdWeather.list[i].main.temp_min + " degrees F" + "</li>" +
+              "<li class=\"list-group-item\">Humidity: " + fdWeather.list[i].main.humidity + "</li>" +
+              "<li class=\"list-group-item\">Wind Speed: " + fdWeather.list[i].wind.speed + " miles/hour" + "</li>" +
+            "</ul>" +
           "</div>" +
-          "<ul class=\"list-group list-group-flush\">" +
-            "<li class=\"list-group-item\">Date and Time: " + fdWeather.list[i].dt_txt +"</li>" +
-            "<li class=\"list-group-item\">Description: " + fdWeather.list[i].weather[0].main + ", " + fdWeather.list[i].weather[0].description + "</li>" +
-            "<li class=\"list-group-item\">Temp: " + fdWeather.list[i].main.temp + "</li>" +
-            "<li class=\"list-group-item\">Max Temp: " + fdWeather.list[i].main.temp_max + "</li>" +
-            "<li class=\"list-group-item\">Min Temp: " + fdWeather.list[i].main.temp_min + "</li>" +
-            "<li class=\"list-group-item\">Humidity: " + fdWeather.list[i].main.humidity + "</li>" +
-            "<li class=\"list-group-item\">Wind Speed: " + fdWeather.list[i].wind.speed + "</li>" +
-          "</ul>" +
         "</div>"
       }
     }
@@ -69,10 +68,11 @@ const FiveDayByThreeHourWeatherForm = ({getFiveDayByThreeHourWeather}) =>
         "<div class=\"card\">"+
           "<div class=\"card-header\" id =\"demo\">"+
             "City: " + city + "   " + "State: " + state + "   " + "Country: " + country +
+          "</div>" +
+          "<ul class=\"list-group list-group-flush\">" +
+            "<li class=\"list-group-item\">Description: " + "There are no results for this location" +"</li>" +
+          "</ul>" +
         "</div>" +
-        "<ul class=\"list-group list-group-flush\">" +
-          "<li class=\"list-group-item\">Description: " + "There are no results for this location" +"</li>" +
-        "</ul>" +
       "</div>"
     }
 

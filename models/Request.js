@@ -15,6 +15,22 @@ const RequestSchema = new mongoose.Schema({
     typeOfRequest:{
       type: String,
       required: true
+    },
+    date:{
+      type: String,
+      required: true
+    },
+    time:{
+      type: String,
+      required: true
+    },
+    file:{
+      type:String,
+      required: true
+    },
+    requestSuccess:{
+      type: String,
+      required: true
     }
 });
 

@@ -4,7 +4,7 @@ import '../../App.css';
 const Landing = () =>
 {
   return (
-    <div> 
+    <div>
       <h1 className="mt-3 mb-5 title navyText text-center"> Weather Analysis</h1>
       <p className="mt-3 mb-5 secondaryText navyText mL30 mR30">
          One Day Weather: This page takes in a city, country, and or state input and
@@ -16,7 +16,11 @@ const Landing = () =>
         if available.
       </p>
       <p className="mt-3 mb-5 secondaryText navyText mL30 mR30">
-        Requests:
+        Requests: This page takes in a date and should return the requests made on that day.
+      </p>
+      <p className="mt-3 mb-5 secondaryText navyText mL30 mR30">
+        Analysis: This takes in a value from Analysis Search section of the reuests that come up in requests,
+        and should bring out the corresponding weather data.
       </p>
     </div>
   )

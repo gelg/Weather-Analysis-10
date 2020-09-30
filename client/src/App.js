@@ -7,6 +7,7 @@ import Landing from './components/layouts/Landing';
 import OneDayWeatherForm from './components/weatherForms/OneDayWeatherForm';
 import Requests from './components/weatherForms/Requests';
 import FiveDayByThreeHourWeatherForm from './components/weatherForms/FiveDayByThreeHourWeatherForm';
+import Analysis from './components/weatherForms/Analysis';
 
 // Redux
 import { Provider } from 'react-redux';
@@ -23,6 +24,7 @@ const App = () =>
           <Route exact path='/OneDayWeather' component={OneDayWeatherForm} />
           <Route exact path='/Requests' component={Requests} />
           <Route exact path='/FiveDayByThreeHourWeather' component={FiveDayByThreeHourWeatherForm} />
+          <Route exact path='/Analysis' component={Analysis} />
         </React.Fragment>
       </Router>
     </Provider>
